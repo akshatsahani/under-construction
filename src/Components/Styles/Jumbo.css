@@ -1,0 +1,42 @@
+.jumbotron-fade {
+  border: 1px solid #ddd; /* Adjust thickness and color as needed */
+  background-image: linear-gradient(to right, #d3e9fb, #fafafa);
+  transition: transform 0.3s ease; /* Smooth transition */
+}
+
+.jumbotron-fade:hover {
+  transform: scale(1.05); /* Expands the element slightly */
+}
+
+.jumbotron-fade h1 {
+  font-weight: bold;
+  font-size: 2.5rem; /* Adjust as needed */
+}
+
+.jumbotron-fade p {
+  font-size: 1.2rem; /* Adjust as needed */
+  line-height: 1.5; /* Improve spacing */
+}
+
+.jumbotron-paragraph {
+  font-size: 12px; /* or any smaller size you want */
+  line-height: 1.6; /* Optional: Adjust line spacing */
+  text-align: justify;
+}
+
+/* Define the slide-in from right animation */
+@keyframes slideInRight {
+  from {
+      transform: translateX(100%);
+      opacity: 0;
+  }
+  to {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+/* Apply the animation to the jumbotron elements */
+.jumbotron-slide-in {
+  animation: slideInRight 1s ease-in-out forwards;
+}

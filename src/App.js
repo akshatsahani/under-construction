@@ -1,14 +1,21 @@
-import yourImage from './display_image.jpg'
+// src/App.js
+import React from 'react';
+import HomePage from'./Pages/HomePage'
+import ComingSoon from './Pages/ComingSoon'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Navbar from './Components/Navbar';
 function App() {
+
   return (
     <div className="App">
-    <div style={{ height: '100vh', width: '100vw', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-    <img 
-      src={yourImage} 
-      alt="Under Construction" 
-      style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'cover' }} 
-    />
-    </div>
+    <Router>
+    <Navbar /> {/* Navbar is displayed across all pages */}
+    <Routes>
+      <Route path="/" element={<HomePage />} /> {/* Render HomePage on the root path */}
+      <Route path="/comingsoon" element={<ComingSoon />} /> {/* Render ComingSoon for products, applications, etc. */}
+    </Routes>
+  </Router>
+
     </div>
   );
 }
